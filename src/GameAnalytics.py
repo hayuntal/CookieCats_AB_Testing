@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from PostgresClient import *
 
-global COLUMNS
 COLUMNS = ['userId', 'version', 'sum_gamerounds', 'retention_1', 'retention_7']
 
 
