@@ -3,7 +3,16 @@ import os
 
 
 class PostgresClient:
+    """
+    Manages connections to a PostgreSQL database, allowing for executing queries and handling the database interaction.
+
+    This class provides methods to connect to the database, execute queries, and close the connection.
+    """
+
     def __init__(self):
+        """
+        Initializes the PostgresClient with database configuration loaded from environment variables.
+        """
         self.host = os.getenv("POSTGRES_HOST")
         self.user = os.getenv("POSTGRES_USER")
         self.password = os.getenv("POSTGRES_PASS")
@@ -18,6 +27,9 @@ class PostgresClient:
             print("Database configuration loaded successfully")
 
     def connect(self):
+        """
+        Establishes a connection to the PostgreSQL database using the loaded credentials.
+        """
         try:
             self.connection = psycopg2.connect(
                 host=self.host,
@@ -33,6 +45,9 @@ class PostgresClient:
             raise e
 
     def execute_query(self, query, params=None):
+        """
+        Executes a SQL query using an active database connection. Returns fetched data or the affected row count.
+        """
         with self.connection.cursor() as cursor:
             try:
                 cursor.execute(query, params)
@@ -45,6 +60,9 @@ class PostgresClient:
                 raise
 
     def close(self):
+        """
+        Closes the database connection and cursor, ensuring all resources are properly released. Confirms closure.
+        """
         if self.cursor:
             self.cursor.close()
         if self.connection:
