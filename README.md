@@ -1,44 +1,98 @@
 # Game Analytics Project
 
+
+# Table of Contents
+
+1. [Overview](#overview)
+2. [About the Game](#about-the-game)
+3. [Project Objectives](#project-objectives)
+4. [Dataset](#dataset)
+5. [Methodology](#methodology)
+6. [Results](#results)
+7. [Tools Used](#tools-used)
+8. [Setup and Installation](#setup-and-installation)
+
+
 ## Overview
-This project is designed to provide robust analytics on game data for the mobile game **Cookie Cats**. The focus is on analyzing user engagement and retention through game rounds using a PostgreSQL database. It consists of several Python scripts that manage database connections, execute queries, and visualize data distributions.
+This project focuses on A/B testing for the popular mobile game **Cookie Cats** to understand how different game designs impact player retention and engagement.
+The data is loaded from a PostgreSQL database, which serves as a robust platform for handling and storing extensive gameplay data.
+Python scripts are then utilized for further data manipulation, executing queries, and visualizing data distributions.
+This integrated approach allows for a detailed analysis of game rounds and user interactions, aiming to provide actionable insights that can help optimize the game's features and improve player experience.
 
-## Repository Structure
 
-### Modules
+## About the Game 
 
-- **`GameAnalytics.py`**: Contains the `GameAnalytics` class, which interfaces with a PostgreSQL database to retrieve game-related data and perform analytical operations.
+### Rules
+Cookie Cats is a puzzle game where players match three or more of the same colored cats to clear them from the board and earn points. The game features several levels, each with unique challenges and objectives. 
 
-- **`PostgresClient.py`**: Manages database connections, allowing for the execution of queries and handling of database interactions. It utilizes environment variables to manage database credentials securely.
+Players must strategically pop the cats to complete each level’s specific goals, such as reaching a certain score or clearing special tiles. Power-ups and special items can be collected and used to enhance gameplay or get out of tough spots. The game progresses in difficulty as more complex layouts and limitations are introduced.
 
-- **`utilis.py`**: Includes functions for visualizing data distributions. It provides detailed histograms and boxplots to compare game rounds across different user groups.
 
-- **`main.ipynb`**: A Jupyter notebook that demonstrates how to use the functionalities provided by the other scripts in practical scenarios.
+### The video Game
+[![Watch the Video of Game Play](https://img.youtube.com/vi/GaP5f0jVTWE/0.jpg)](https://www.youtube.com/watch?v=GaP5f0jVTWE)  
+<p align="center" style="margin-right: 150px;"><em>Cookie Cats - Launch! (YouTube)</em></p>
 
-### Features
 
-- **Data Retrieval**: Fetch game data from a PostgreSQL database efficiently.
-- **Data Visualization**: Generate histograms and boxplots to analyze the distribution of game rounds between control and test groups.
-- **Database Interaction**: Connect, execute queries, and close connections with robust error handling.
 
-## Installation
 
-To set up this project:
+## Project Objectives
 
-1. Ensure Python and PostgreSQL are installed on your system.
-2. Clone this repository.
-3. Install required Python packages:
+- **Analyze Player Engagement**: Evaluate how changes in the game affect player engagement levels.
+- **Test Game Features**: Conduct A/B tests on various game features to determine their impact on user retention.
+- **Data-Driven Decisions**: Assist the game developers in making informed decisions based on the analysis results.
+
+## Dataset
+
+The dataset used in this project consists of the following columns:
+
+- **`userid`**: Unique identifier for each user.
+- **`version`**: The version of the game the user was exposed to during the A/B test (A - `gate_30`, B - `gate_40`).
+- **`sum_gamerounds`**: The total number of game rounds played by the user during the first 14 days after installation.
+- **`retention_1`**: Whether the user came back and played the game 1 day after installing it (True or False).
+- **`retention_7`**: Whether the user came back and played the game 7 days after installing it (True or False).
+
+
+## Methodology
+This section details the statistical methods and processes used in the A/B testing, including:
+
+- Data collection and preprocessing (Data Cleaning and EDA)
+- Definition of control and test groups 
+- Statistical tests performed (Shapiro, Levene and T-Test)
+- Criteria for success evaluation
+
+## Results
+A summary of the A/B testing results, including key findings on how different variables influenced player behavior. This section will also discuss the statistical significance of the results and their implications for game development.
+
+## Tools Used
+- PostgreSQL: Used for storing and managing user data.
+- Python: For data manipulation and statistical analysis.
+- SQL: For data querying.
+- Git: For version control.
+
+## Setup and Installation
+
+Follow these steps to get the project set up and running on your local machine:
+
+### Prerequisites
+Make sure you have PostgreSQL and Python installed. You'll also need to install any required Python libraries which can be found in a `requirements.txt` file in the repository.
+
+### Environment Variables
+Set up the following environment variables required for the application to connect to your PostgreSQL database:
+- **`POSTGRES_DB`**: The name of your PostgreSQL database.
+- **`POSTGRES_HOST`**: The host address of the PostgreSQL server (e.g., localhost if running locally).
+- **`POSTGRES_PASS`**: The password for accessing the PostgreSQL database.
+- **`POSTGRES_USER`**: The username for accessing the PostgreSQL database.
+
+You can set these environment variables in your operating system, or you can use a `.env` file and load them within your application using a library like python-dotenv.
+
+### Clone the Repository
+Clone the repository and navigate into it:
+
    ```bash
-   pip install psycopg2 matplotlib
+   git clone https://github.com/hayuntal/CookieCats_AB_Testing.git
+   cd CookieCats_AB_Testing
    ```
-4. Set up the necessary environment variables for database access:
-- **POSTGRES_HOST**: The hostname of your PostgreSQL server.
-- **POSTGRES_USER:** Your database username.
-- **POSTGRES_PASS:** Your database password.
-- **POSTGRES_DB:** The database name.
 
-## Contributing
-Contributions to this project are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
-
-
-
+### Load Data into PostgreSQL
+Transfer `cookie_cats.csv` file (exists into data directory) into the PostgreSQL database, you can use a script or a databse tool that supports CSV imports.
+Ensure you create a table named `data_tbl`.
