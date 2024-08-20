@@ -1,7 +1,8 @@
 # Game Analytics Project
 
+![Cookie Cats](.img1.png)
 
-# Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 2. [About the Game](#about-the-game)
@@ -30,7 +31,7 @@ Players must strategically pop the cats to complete each level’s specific goal
 
 ### The video Game
 [![Watch the Video of Game Play](https://img.youtube.com/vi/GaP5f0jVTWE/0.jpg)](https://www.youtube.com/watch?v=GaP5f0jVTWE)  
-<p align="center" style="margin-right: 150px;"><em>Cookie Cats - Launch! (YouTube)</em></p>
+<p align="center" style="margin-right: 190px;"><em>Cookie Cats - Launch! (YouTube)</em></p>
 
 
 
