@@ -31,7 +31,7 @@ Players must strategically pop the cats to complete each level’s specific goal
 
 ### The video Game
 [![Watch the Video of Game Play](https://img.youtube.com/vi/GaP5f0jVTWE/0.jpg)](https://www.youtube.com/watch?v=GaP5f0jVTWE)  
-<p align="center" style="margin-right: 190px;"><em>Cookie Cats - Launch! (YouTube)</em></p>
+<em>Cookie Cats - Launch! (YouTube)</em>
 
 
 
