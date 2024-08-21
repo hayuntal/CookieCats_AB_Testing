@@ -14,14 +14,14 @@
 8. [Setup and Installation](#setup-and-installation)
 
 
-## Overview
+## 1. Overview
 This project focuses on A/B testing for the popular mobile game **Cookie Cats** to understand how different game designs impact player retention and engagement.
 The data is loaded from a PostgreSQL database, which serves as a robust platform for handling and storing extensive gameplay data.
 Python scripts are then utilized for further data manipulation, executing queries, and visualizing data distributions.
 This integrated approach allows for a detailed analysis of game rounds and user interactions, aiming to provide actionable insights that can help optimize the game's features and improve player experience.
 
 
-## About the Game 
+## 2. About the Game 
 
 ### Rules
 Cookie Cats is a puzzle game where players match three or more of the same colored cats to clear them from the board and earn points. The game features several levels, each with unique challenges and objectives. 
@@ -34,13 +34,13 @@ Players must strategically pop the cats to complete each level’s specific goal
 <em>Cookie Cats - Launch! (YouTube)</em>
 
 
-## Project Objectives
+## 3. Project Objectives
 
 - **Analyze Player Engagement**: Evaluate how changes in the game affect player engagement levels.
 - **Test Game Features**: Conduct A/B tests on various game features to determine their impact on user retention.
 - **Data-Driven Decisions**: Assist the game developers in making informed decisions based on the analysis results.
 
-## Dataset
+## 4. Dataset
 
 The dataset used in this project consists of the following columns:
 
@@ -51,7 +51,7 @@ The dataset used in this project consists of the following columns:
 - **`retention_7`**: Whether the user came back and played the game 7 days after installing it (True or False).
 
 
-## Methodology
+## 5. Methodology
 This section details the statistical methods and processes used in the A/B testing, including:
 
 - Data collection and preprocessing (Data Cleaning and EDA)
@@ -59,16 +59,16 @@ This section details the statistical methods and processes used in the A/B testi
 - Statistical tests performed (Shapiro, Levene and T-Test)
 - Criteria for success evaluation
 
-## Results
+## 6. Results
 A summary of the A/B testing results, including key findings on how different variables influenced player behavior. This section will also discuss the statistical significance of the results and their implications for game development.
 
-## Tools Used
+## 7. Tools Used
 - PostgreSQL: Used for storing and managing user data.
 - Python: For data manipulation and statistical analysis.
 - SQL: For data querying.
 - Git: For version control.
 
-## Setup and Installation
+## 8. Setup and Installation
 
 Follow these steps to get the project set up and running on your local machine:
 
