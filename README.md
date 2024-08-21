@@ -4,14 +4,14 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [About the Game](#about-the-game)
-3. [Project Objectives](#project-objectives)
-4. [Dataset](#dataset)
-5. [Methodology](#methodology)
-6. [Results](#results)
-7. [Tools Used](#tools-used)
-8. [Setup and Installation](#setup-and-installation)
+1. [Overview](#1-overview)
+2. [About the Game](#2-about-the-game)
+3. [Project Objectives](#3-project-objectives)
+4. [Dataset](#4-dataset)
+5. [Methodology](#5-methodology)
+6. [Results](#6-results)
+7. [Tools Used](#7-tools-used)
+8. [Setup and Installation](#8-setup-and-installation)
 
 
 ## 1. Overview
